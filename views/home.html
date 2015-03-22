@@ -1,0 +1,156 @@
+{{template "header" .}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="index-header">
+          <h1 class="index-title">价格在线</h1>
+          <p class="lead index-description">
+          {{.Intro}}
+          </p>
+        </div>
+      </div>
+      <div class="col-md-8">
+      <!--  CPI/PPI指数折线图 -->
+        <script type="text/javascript">
+          $(function () {
+                  $('#cpippi').highcharts({
+                      title: {
+                          text: 'CPI/PPI指数',
+                          x: -20 //center
+                      },
+                      subtitle: {
+                          text: '',
+                          x: -20
+                      },
+                      xAxis: {
+                          categories: [{{range $key,$val := .Dates}}{{$val}},{{end}}]
+                      },
+                      yAxis: {
+                          title: {
+                              text: ''
+                          },
+                          plotLines: [{
+                              value: 0,
+                              width: 1,
+                              color: '#808080'
+                          }]
+                      },
+                      tooltip: {
+                          valueSuffix: ''
+                      },
+                      legend: {
+                          layout: 'vertical',
+                          align: 'right',
+                          verticalAlign: 'middle',
+                          borderWidth: 0
+                      },
+                      series: [{
+                          name: '全国CPI',
+                          data: [{{range $val := .Qgcpi}}{{$val}},{{end}}]
+                      }, {
+                      	name: '湖南CPI',
+                      	data: [{{range $val := .Hncpi}}{{$val}},{{end}}]
+                          
+                      }, {
+                          name: '全国PPI',
+                          data: [{{range $val := .Qgppi}}{{$val}},{{end}}]
+                      }, {
+                      	name: '湖南PPI',
+                      	data: [{{range $val := .Hnppi}}{{$val}},{{end}}]
+                      }]
+                  });
+              });
+        </script>
+        <script type="text/javascript" src="/static/js/highcharts.js"></script>
+        <div id="cpippi" style="height: 250px; margin: 0 auto"></div>
+      </div>
+    </div>
+
+    <div class="row">
+    
+      <div class="col-md-8 index-main">
+      {{range .Articles}}
+        <div class="index-post">
+          <h3>{{.Title}}</h3>
+          <div class="index-post-meta">{{.Date}} by {{.Author}} 点击：{{.Clink}}</div>
+          <blockquote>
+          <p>{{str2html .Lead}}</p>
+          <a type="button" data-toggle="modal" data-target="#myModal">[详情]</a>
+          </blockquote>
+          <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="modal-title" id="myModalLabel">{{.Title}}</h3>
+                  <div class="index-post-meta">{{.Date}} by {{.Author}} 点击：{{.Clink}}</div>
+                </div>
+                <div class="modal-body">
+                  {{str2html .Content}}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关 闭</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div><!-- /.index-post -->
+      {{end}}
+        <script type="text/javascript">
+        function loadXMLDoc()
+        {
+          var xmlhttp;
+          if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+            }
+          else
+            {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+              {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+              }
+            xmlhttp.open("GET","/getajaxarticles?Id=101",true);
+            xmlhttp.send();
+          alert("Ajax!");
+        }
+        </script>
+        <div id="myDiv"></div>
+        <div>
+          <button type="button" class="btn" onclick="loadXMLDoc()">更 多 内 容</button>
+        </div>
+        <br/>
+      </div><!-- /.index-main -->
+
+      <div class="col-md-3 col-md-offset-1 index-sidebar">
+        <div class="sidebar-module sidebar-module-inset">
+          <h4>专 题</h4>
+          <p>{{str2html .Topic.Lead}}<br/><a href="/topic" target="_blank">[详 情]</a></p>
+        </div>
+        <div class="sidebar-module">
+          <h4>热 点</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">March 2014</a></li>
+            <li><a href="#">February 2014</a></li>
+            <li><a href="#">January 2014</a></li>
+            <li><a href="#">December 2013</a></li>
+            <li><a href="#">November 2013</a></li>
+            <li><a href="#">October 2013</a></li>
+            <li><a href="#">September 2013</a></li>
+            <li><a href="#">August 2013</a></li>
+            <li><a href="#">July 2013</a></li>
+            <li><a href="#">June 2013</a></li>
+            <li><a href="#">May 2013</a></li>
+            <li><a href="#">April 2013</a></li>
+          </ol>
+        </div>
+      </div><!-- /.index-sidebar -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+{{template "footer"}}
