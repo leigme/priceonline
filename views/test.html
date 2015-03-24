@@ -15,9 +15,13 @@
 	<title>测试页面</title>
   <script type="text/javascript">
   $(document).ready(function(){
+    var Pages = {{.Pages}}
     var Page = 0;
     $("#btn1").click(function(){
-      var Url = "/test?Page="+Page
+      if (Page < Pages)
+        var Url = "/test?Page="+Page;
+      else
+        var Url = "/";
       htmlobj=$.ajax({url: Url,async:false});
       $("#myDiv").append(htmlobj.responseText);
       Page = Page + 1;
