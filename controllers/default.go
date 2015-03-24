@@ -161,3 +161,10 @@ func (c *MainController) GetAjaxArticles() {
 	c.Data["Id"] = nid
 	c.TplNames = "ajax.tpl"
 }
+
+func (c *MainController) Test() {
+	c.Data["Title"] = "测 试"
+	page := c.GetString("Page")
+	beego.Info(page)
+	c.TplNames = "test.html"
+}
