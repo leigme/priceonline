@@ -6,6 +6,7 @@
 	    <link rel="icon" href="static/img/favicon.ico">
 	    <!-- Bootstrap core CSS -->
 	    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
 	    <!-- Custom styles for this template -->
 	    <link href="/static/css/index.css" rel="stylesheet">
 	    <!-- jquery 1.11.2-->
@@ -13,6 +14,8 @@
 	    <!-- bootstrap js -->
 	    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 
+	    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js"></script>
+	    <script type="text/javascript" src="/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 	    <title>价格在线 - {{.Title}}</title>
 	  </head>
 	  <body>

@@ -11,6 +11,7 @@ func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/getajaxarticles", &controllers.MainController{}, "get:GetAjaxArticles")
 	beego.Router("/topic", &controllers.MainController{}, "get:Topic")
+	beego.Router("/policies", &controllers.MainController{}, "get:GetPolicies")
 
 	beego.Router("/admin/signin", &controllers.ManageController{})
 	beego.Router("/admin", &controllers.ManageController{}, "post:Admin")

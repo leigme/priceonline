@@ -48,7 +48,7 @@ func Getstringtoint(stringtoint string) int64 {
 
 func (navbar *Navbar) Getnavbar(active string) (Navbar, []Navbar, []Navbar) {
 	navob1 := Navbar{false, "/", "资 讯"}
-	navob2 := Navbar{false, "/", "政 策"}
+	navob2 := Navbar{false, "/policies", "政 策"}
 	navob3 := Navbar{false, "/", "分 析"}
 	navob4 := Navbar{false, "/", "旅 游"}
 	navob5 := Navbar{false, "/", "美 食"}
@@ -166,4 +166,14 @@ func (c *MainController) Test() {
 	beego.Info(page)
 	c.Data["Pages"] = pages
 	c.TplNames = "test.html"
+}
+
+func (c *MainController) GetPolicies() {
+	c.Data["Title"] = "政 策"
+	var navbar Navbar
+	nav1, nav2, nav3 := navbar.Getnavbar("政 策")
+	c.Data["Nav1"] = nav1
+	c.Data["Nav2"] = nav2
+	c.Data["Nav3"] = nav3
+	c.TplNames = "policies.html"
 }

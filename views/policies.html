@@ -1,0 +1,146 @@
+{{template "header" .}}
+  <div class="container">
+    <div class="row">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="btn-group">
+          <select class="btn btn-primary dropdown-toggle">
+            <option value="">查询范围</option>
+            <option value="">标题包涵</option>
+            <option value="">正文包涵</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>关键字：</label>
+          <input type="text" class="form-control" size="20" placeholder="标题包含">
+        </div>
+        <div class="form-group">
+          <label>文号：</label>
+          <input type="text" class="form-control" size="20" placeholder="如：湘价费[123]号">
+        </div>
+        <div class="form-group">
+          <label>时间范围：</label>
+          <input id="startdate" class="form-control" size="10" type="text" value="2015-03-25" readonly>
+          <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <label>至</label>
+        <div class="form-group">
+          <input id="enddate" class="form-control" size="10" type="text" value="2015-03-25" readonly>
+          <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <button type="submit" class="btn btn-default">查 询</button>
+        <script type="text/javascript">
+          $('#startdate').datetimepicker({
+            language:"zh-CN",
+            format:"yyyy-mm-dd",
+            minView:"month",
+            autoclose: true,
+            todayBtn: true,
+            });
+          $('#enddate').datetimepicker({
+            language:"zh-CN",
+            format:"yyyy-mm-dd",
+            minView:"month",
+            autoclose: true,
+            todayBtn: true,
+            });
+        </script>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar-module">
+          <ol class="list-unstyled">
+            <li><a href="#">全  部</a></li>
+            <li><a href="#">国家和省委省政府文件</a></li>
+            <li><a href="#">办公室</a></li>
+            <li><a href="#">人事教育处</a></li>
+            <li><a href="#">综合法规调控处</a></li>
+            <li><a href="#">石油交通和商品价格管理处</a></li>
+            <li><a href="#">医药价格管理处</a></li>
+            <li><a href="#">行政事业性收费管理处</a></li>
+            <li><a href="#">教育收费管理处</a></li>
+            <li><a href="#">电力价格管理处</a></li>
+            <li><a href="#">住房旅游和服务价格管理处</a></li>
+            <li><a href="#">纪检监察室、机关党委</a></li>
+            <li><a href="#">价格监督检查与反垄断局</a></li>
+            <li><a href="#">价格成本调查队</a></li>
+            <li><a href="#">价格信息中心</a></li>
+            <li><a href="#">价格认证中心</a></li>
+            <li><a href="#">价格监测分析中心</a></li>
+            <li><a href="#">价格研究所</a></li>
+            <li><a href="#">其他</a></li>
+          </ol>         
+        </div><!-- /.sidebar-module -->
+      </div>
+      <div class="col-md-5 index-main">
+        <div>
+          
+          ·关于修改教育收费管理办法部分内容的通知湘发改价教〔2014〕1127号
+          ·国家发展改革委中央编办关于一律不得将企业经营自主权事项作为企业投资...发改投资[2014]2999号
+          ·关于印发推进规范医师多点执业的若干意见的通知国卫医发〔2014〕86号
+          ·关于印发能效“领跑者”制度实施方案的通知发改环资[2014]3001号
+          ·关于取消、停征和免征一批行政事业性收费的通知财税[2014]101号
+          ·关于进一步促进冷链运输物流企业健康发展的指导意见发改经贸[2014]2933号
+          ·关于印发《贯彻落实〈国务院关于加快发展生产性服务业促进产业结构调整...湘发改服务〔2014〕976号
+          ·印发《关于运用价费政策促进经济平稳较快发展的意见》的通知湘发改价综〔2014〕901号
+          ·湖南省物价局、湖南省财政厅、湖南省教育厅关于调整我省成人高等学历教...湘价教〔2014〕92号
+          ·湖南省物价局关于调整省电网水电上网电价的通知湘价电〔2014〕99号
+          ·湖南省物价局关于制定特比萘芬片等13个药品增补规格最高零售价格的通知...湘价医〔2014〕105号
+          ·湖南省发展和改革委员关于奥美拉唑肠溶胶囊等药品最高零售价格的通知湘发改价医【2014】852号
+          ·关于印发《湖南省主要污染物排污权有偿使用收入征收使用管理办法》的通...湘财综〔2014〕32号
+          ·湖南省物价局湖南省住房和城乡建设厅转发《国家发展改革委住房城乡建设...湘价服〔2014〕103号
+          ·湖南省物价局转发《国家发展改革委关于放开部分专业服务收费标准有关问...湘价服〔2014〕104号
+          ·湖南省物价局关于华电湘潭九华燃气分布式能源上网电价问题的复函湘价函〔2014〕114号
+          ·湖南省物价局关于印发《湖南省机动车驾驶许可培训收费行为规则》的通知...湘价服〔2014〕93号
+          ·湖南省物价局、湖南省新闻出版局关于下达2014年秋季中小学教材价格的通...湘价教〔2014〕101号
+          ·湖南省物价局关于降低成品油价格的通知湘价传电〔2014〕37号
+          ·湖南省物价局关于改进低价药品价格管理有关问题的通知湘价医〔2014〕96号
+
+
+        </div>
+        <div id="ajaxArticles"></div>
+        <div>
+          <button id="moreArticles" type="button" class="btn">更 多 内 容</button>
+        </div>
+          <br/>
+      </div>
+          
+      <div class="col-md-3 col-md-offset-1 index-sidebar">
+        <div class="sidebar-module">
+          <h4>热 点</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">测试记录一</a></li>
+            <li><a href="#">测试记录二</a></li>
+            <li><a href="#">January 2014</a></li>
+            <li><a href="#">December 2013</a></li>
+            <li><a href="#">November 2013</a></li>
+            <li><a href="#">October 2013</a></li>
+            <li><a href="#">September 2013</a></li>
+            <li><a href="#">August 2013</a></li>
+            <li><a href="#">July 2013</a></li>
+            <li><a href="#">June 2013</a></li>
+            <li><a href="#">May 2013</a></li>
+            <li><a href="#">April 2013</a></li>
+          </ol>
+        </div>
+      </div><!-- /.index-sidebar -->
+
+    </div><!-- /.index-main -->
+  </div><!-- /.container -->
+{{template "footer"}}
+      <script type="text/javascript">
+      $(document).ready(function(){
+        var Pages = {{.Pages}}
+        var Page = 0;
+        $("#moreArticles").click(function(){
+          if (Page < Pages)
+            var Url = "/getajaxarticles?Page="+Page;
+          else
+            var Url = "/test";
+          htmlobj=$.ajax({url: Url,async:false});
+          $("#ajaxArticles").append(htmlobj.responseText);
+          Page = Page + 1;
+        });
+      });
+      </script>
